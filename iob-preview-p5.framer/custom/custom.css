@@ -1,0 +1,28 @@
+/*line chart*/
+#chart .ct-line{
+	stroke: #fff;
+	stroke-width: 8px;
+	stroke-linecap: round;
+}
+#chart .ct-point{
+	stroke-width: 20px;
+}
+#chart .ct-grid{
+	stroke: rgba(255, 255, 255, 0.2);
+	stroke-dasharray: 8px;
+}
+#chart .ct-vertical{
+	display: none;
+	color: #fff;
+	font-size: 1em;
+}
+#chart .ct-horizontal{
+	transform: translateY(6px);
+	font-size: .8em;
+	color: #fff;
+	justify-content: center;
+}
+
+#chart .ct-axis-title {
+	fill: #fff;
+}

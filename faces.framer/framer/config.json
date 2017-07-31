@@ -1,0 +1,20 @@
+{
+  "orientation" : 0,
+  "updateDelay" : 0.3,
+  "contentScale" : 1,
+  "fullScreen" : false,
+  "sharedPrototype" : true,
+  "propertyPanelToggleStates" : {
+    "Filters" : false
+  },
+  "deviceType" : "apple-iphone-5c-white",
+  "projectId" : "36D942B1-0738-47F9-A280-0882FB391E4F",
+  "deviceOrientation" : 0,
+  "selectedHand" : "",
+  "foldedCodeRanges" : [
+    "{0, 244}",
+    "{245, 2744}",
+    "{2990, 2849}"
+  ],
+  "deviceScale" : "fit"
+}
