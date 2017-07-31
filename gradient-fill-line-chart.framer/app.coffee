@@ -10,14 +10,14 @@ getOffsetPos = (event) ->
 		x: event.pageX - rect.left
 		y: event.pageY - rect.top
 	if event instanceof MouseEvent
-		p = 
+		p =
 			x: event.offsetX
 			y: event.offsetY
 	return p
 
 # Canvas
 
-# Include a Layer 
+# Include a Layer
 p5canvas = new Layer
 	html: '<div id="c1"></div>'
 	backgroundColor: "transparent"
@@ -43,7 +43,7 @@ s = (p)->
 		p.createCanvas(Screen.width, Screen.width)
 		p.createDataPoints()
 		p.getDataSegments()
-		
+
 	p.draw = ->
 		p.clear()
 # 		p.background 255, 30
@@ -71,7 +71,7 @@ s = (p)->
 			t3 += 0.01 if t3 >= 0.8
 			t3 = 1 if t3 > 0.99
 			drawSegmentCurve(2, t3)
-	
+
 	class DataPoint
 		constructor: (@t, @v) ->
 			this.update()
@@ -83,7 +83,7 @@ s = (p)->
 			p.noStroke()
 			p.fill 255
 			p.ellipse @x, @y, 10, 10
-	
+
 	p.createDataPoints = ->
 		bgSets = []
 		bgSegSets = []
@@ -99,7 +99,7 @@ s = (p)->
 		if p.random(1) > 0.8
 			return p.int(p.random(minBG, maxBG))
 		return p.int(p.random(60, 240))
-		
+
 	p.getDataSegments = ->
 		for bgData in bgSets
 			bgSegments = []
@@ -113,7 +113,7 @@ s = (p)->
 						if i > 0
 							d0 = bgData[i-1]
 					if one.x > px
-						d2 = one 
+						d2 = one
 						if index < bgData.length - 2
 							d3 = bgData[index+1]
 						break
@@ -123,7 +123,7 @@ s = (p)->
 				z = Math.round p.map y, p.height - 40, 40, minBG, maxBG
 				bgSegments.push	p.createVector(x, y, z)
 			bgSegSets.push bgSegments
-		
+
 	drawDataCurve = ->
 		p.noFill()
 		p.stroke 255
@@ -133,7 +133,7 @@ s = (p)->
 		for one in bgData
 			p.curveVertex one.x, one.y
 		p.endShape()
-		
+
 	drawSegmentCurve = (index, t)->
 		bgSegments = bgSegSets[index]
 		gr = p.drawingContext.createLinearGradient 0, 0, 0, p.height
@@ -150,13 +150,13 @@ s = (p)->
 				p.drawingContext.lineTo one.x, one.y
 		p.drawingContext.lineTo end, p.height
 		p.drawingContext.closePath()
-		
+
 myp5 = new p5(s, 'c1')
 
 # UI
 Screen.backgroundColor = "#32D2AF"
 
-	
+
 label = new Layer
 	html: "Welcome Back"
 	backgroundColor: "transparent"
@@ -168,7 +168,7 @@ label = new Layer
 		"font-weight": "bold"
 		"font-size": "60px"
 		"text-align": "center"
-	
+
 nowT = moment().format('LT').toLowerCase()
 
 timeLabel = new Layer
@@ -179,7 +179,7 @@ timeLabel = new Layer
 		'color': '#FFF'
 		"font-size": "24px"
 		"text-align": "center"
-		"line-height": "30px"	
+		"line-height": "30px"
 
 bgLabel = new Layer
 	backgroundColor: "#FFF"
@@ -237,11 +237,10 @@ p5canvas.on Events.Tap, () ->
 	setTimeout ( ->
 		popupAni.start()
 	), 2000
-	
+
 css = """
 .bg-label span {
 	font-size: 24px;
 }
 """
 Utils.insertCSS(css)
-		
