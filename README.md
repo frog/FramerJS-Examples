@@ -22,12 +22,12 @@ Play with BodyMovin AfterEffects Plugin, it includes a typewriter animation effe
 
 ![](demo/faces.gif)
 
-### firebase+iOSkits
+### firebase-iOSkits
 
 Play with firebase to sync data across different applications and testing iOS kits module
 `[p5.js + firebase + iOSKits + framerJS]`
 
-![](demo/firebase+iOSkits.gif)
+![](demo/firebase-iOSkits.gif)
 
 ### gradient-background
 
